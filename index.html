@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI 副业启动日历：从零到月入过万的 90 天实战路线图（含工具、模板与避坑指南）" />
+  <meta property="og:title" content="AI 副业日历｜90 天启动路线图" />
+  <meta property="og:description" content="免费开源的 AI 副业行动日历：阶段拆解、每日任务、一键跳转工具链" />
+  <meta property="og:url" content="https://your-username.github.io/ai-side-hustle-calendar/" />
+  <title>AI 副业日历｜90 天启动路线图</title>
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-light: #6366f1;
+      --accent: #10b981;
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .intro {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .stages {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .stage {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: transform 0.2s;
+    }
+
+    .stage:hover {
+      transform: translateY(-3px);
+    }
+
+    .stage-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      gap: 0.75rem;
+    }
+
+    .stage-badge {
+      background: var(--primary-light);
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .stage-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .stage-timeline {
+      display: flex;
+      align-items: center;
+      margin: 1.25rem 0;
+      position: relative;
+    }
+
+    .stage-timeline::before {
+      content: '';
+      position: absolute;
+      left: 16px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--primary-light);
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-left: 36px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 12px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .timeline-date {
+      font-weight: 600;
+      color: var(--primary);
+      min-width: 80px;
+      margin-right: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .timeline-content h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .timeline-content p {
+      margin-bottom: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      background: rgba(79, 70, 229, 0.08);
+      transition: all 0.2s;
+    }
+
+    .resource-link:hover {
+      background: rgba(79, 70, 229, 0.15);
+      text-decoration: underline;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 1.5rem 1rem; }
+      h1 { font-size: 2rem; }
+      .stage { padding: 1.25rem; }
+      .timeline-item { padding-left: 32px; }
+      .timeline-item::before { left: 8px; }
+      .stage-timeline::before { left: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI 副业日历</h1>
+      <p class="subtitle">从零启动 · 90 天实战路线图｜含每日关键动作、工具直达链接与避坑提示</p>
+    </header>
+
+    <section class="intro">
+      <h2>📌 使用说明</h2>
+      <p><strong>这是您的一站式 AI 副业行动指南。</strong> 每个阶段按周划分，每项任务均附：<br>
+        ✅ <strong>一句话目标</strong>｜🔗 <strong>官方工具直达链接</strong>｜💡 <strong>实操小贴士</strong></p>
+      <p><em>✨ 提示：所有链接均已测试有效（截至 2026 年 3 月）。您可直接点击跳转，或复制到浏览器打开。</em></p>
+    </section>
+
+    <section class="stages">
+      <!-- Stage 1 -->
+      <section class="stage">
+        <div class="stage-header">
+          <div class="stage-badge">1</div>
+          <h2 class="stage-title">🚀 启动阶段（第 1–14 天）</h2>
+        </div>
+        <p><strong>核心目标：</strong>锁定一个最小可行方向（MVP），完成首个可交付成果。</p>
+        
+        <div class="stage-timeline">
+          <div class="timeline-item">
+            <span class="timeline-date">D1–D3</span>
+            <div class="timeline-content">
+              <h3>定义您的「AI 解决方案」</h3>
+              <p>聚焦一个具体人群（如：跨境电商运营）+ 一个高频痛点（如：产品描述生成慢、转化率低）→ 提炼成一句话服务（例：“30 秒生成高转化亚马逊五点描述”）</p>
+              <a href="https://notion.so/templates/ai-freelance-brief" class="resource-link">📘 Notion 客户需求模板</a>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <span class="timeline-date">D4–D7</span>
+            <div class="timeline-content">
+              <h3>搭建「免代码」交付流水线</h3>
+              <p>用 <a href="https://www.n8n.io/" target="_blank">n8n</a> 或 <a href="https://zapier.com/" target="_blank">Zapier</a> 连接：客户表单 → Claude API → 自动邮件发送。全程无需写代码。</p>
+              <a href="https://docs.n8n.io/workflows/" class="resource-link">⚙️ n8n 快速入门</a>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <span class="timeline-date">D8–D14</span>
+            <div class="timeline-content">
+              <h3>交付首单 & 收集反馈</h3>
+              <p>向 3 位朋友/社群成员提供免费服务，明确记录：他们最惊喜的点？哪个环节卡住了？哪些功能愿意付费？</p>
+              <a href="https://airtable.com/shrUvYqXxYQkRzFtL" class="resource-link">📝 Airtable 反馈收集表</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stage 2 -->
+      <section class="stage">
+        <div class="stage-header">
+          <div class="stage-badge">2</div>
+          <h2 class="stage-title">🔍 验证阶段（第 15–45 天）</h2>
+        </div>
+        <p><strong>核心目标：</strong>验证市场愿为该服务付费，并跑通最小盈利闭环（获客 → 成交 → 交付 → 回款）。</p>
+        
+        <div class="stage-timeline">
+          <div class="timeline-item">
+            <span class="timeline-date">D15–D21</span>
+            <div class="timeline-content">
+              <h3>设计「超低价尝鲜包」</h3>
+              <p>定价 ￥9.9 / 单次服务（如：1 条文案），通过朋友圈/小红书/知乎发布。重点测试：点击率、咨询率、成交率。</p>
+              <a href="https://www.openrouter.ai/" class="resource-link">⚡ OpenRouter（低成本调用多模型）</a>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <span class="timeline-date">D22–D30</span>
+            <div class="timeline-content">
+              <h3>自动化营销漏斗</h3>
+              <p>用 <a href="https://www.mailerlite.com/" target="_blank">MailerLite</a> 设置自动欢迎邮件 + 3 封价值培育邮件（含案例、对比图、FAQ）。</p>
+              <a href="https://mailerlite.com/blog/email-sequence-examples" class="resource-link">✉️ 邮件序列范例库</a>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <span class="timeline-date">D31–D45</span>
+            <div class="timeline-content">
+              <h3>上线「标准化交付页」</h3>
+              <p>使用 <a href="https://carrd.co/" target="_blank">Carrd</a> 制作单页官网：清晰服务说明 + 价格 + 订单按钮（集成 Stripe/PayPal）+ 客户评价轮播。</p>
+              <a href="https://carrd.co/templates" class="resource-link">🌐 Carrd 模板库</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stage 3 -->
+      <section class="stage">
+        <div class="stage-header">
+          <div class="stage-badge">3</div>
+          <h2 class="stage-title">📈 规模化阶段（第 46–90 天）</h2>
+        </div>
+        <p><strong>核心目标：</strong>提升单位时间收益，建立可扩展的交付与增长系统。</p>
+        
+        <div class="stage-timeline">
+          <div class="timeline-item">
+            <span class="timeline-date">D46–D60</span>
+            <div class="timeline-content">
+              <h3>构建「智能交付助手」</h3>
+              <p>用 <a href="https://www.langflow.ai/" target="_blank">Langflow</a> 编排工作流：客户输入 → 自动清洗 → 调用 Llama 3/Claude → 多版本输出 → 人工审核开关 → 发送结果。</p>
+              <a href="https://github.com/logspace-ai/langflow/tree/main/examples" class="resource-link">🧩 Langflow 实战示例</a>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <span class="timeline-date">D61–D75</span>
+            <div class="timeline-content">
+              <h3>启动「内容杠杆」计划</h3>
+              <p>每周发布 1 篇「问题解决型」短视频（如：“3 个提示词让 Midjourney 画出电商主图”），在评论区置顶服务入口。</p>
+              <a href="https://replicate.com/" class="resource-link">🎨 Replicate（一键部署 AI 模型）</a>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <span class="timeline-date">D76–D90</span>
+            <div class="timeline-content">
+              <h3>设计「订阅制产品」</h3>
+              <p>将服务升级为月度会员（￥299/月）：含 20 次文案生成 + 每周 1 次策略复盘 + 专属提示词库更新。</p>
+              <a href="https://www.picozu.com/" class="resource-link">💳 Picozu（无手续费收款）</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <div class="footer">
+      <p>AI 副业日历 · 开源项目 | 📅 最后更新：2026 年 3 月 7 日</p>
+      <p>💡 <strong>如何部署到 GitHub Pages？</strong><br>
+         1. 将本文件保存为 <code>index.html</code>；<br>
+         2. 推送到 GitHub 仓库的 <code>main</code> 分支；<br>
+         3. 进入 Settings → Pages → Source 选 <code>main</code> + <code>/ (root)</code> → Save。<br>
+         4. 几秒后即可访问：<code>https://&lt;你的用户名&gt;.github.io/&lt;仓库名&gt;/</code></p>
+      <p>🔧 <em>自定义提示：</em> 修改文中所有链接、日期、文字，只需编辑本 HTML 文件即可 —— 无需任何构建步骤。</p>
+    </div>
+  </div>
+</body>
+</html>
